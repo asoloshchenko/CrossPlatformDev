@@ -15,6 +15,13 @@ function LRS(f, a, b){
 function LRR(f, a, b){
     return f(b) * (b-a)
 }
+/**
+ * Approximates the definite integral of f(x) over the interval [a, b] using the midpoint rule.
+ * @param {function} f - The function to integrate.
+ * @param {number} a - The lower bound of the interval.
+ * @param {number} b - The upper bound of the interval.
+ * @returns {number} The approximate integral value.
+ */
 function MidpointRule(f, a, b){
     return f((a+b)/2) * (b-a)
 }
@@ -60,8 +67,8 @@ function integrate(func, method, a, b,accuracy=0.001, limit = 100) {
     return res;
 }
 
-let a = parseInt(prompt('Enter a: '));
-let b = parseInt(prompt('Enter b: '));
+let a = parseFloat(prompt('Enter a: '));
+let b = parseFloat(prompt('Enter b: '));
 
 funcs.forEach(func => {
     console.log(func.name);
